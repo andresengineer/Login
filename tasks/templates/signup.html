@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="container mt-5">
+    <!-- Encabezado -->
+    <header class="text-center mb-4">
+        <h1 class="text-danger fw-bold animate__animated animate__fadeInDown">Registro al Servicio Médico - Univalle</h1>
+        <p class="text-muted fs-5">Únete al sistema médico de la Universidad del Valle y accede a una atención integral para tu bienestar.</p>
+    </header>
+
+    <!-- Beneficios de Registrarse -->
+    <section class="my-5">
+        <div class="row align-items-center">
+            <!-- Imagen izquierda -->
+            <div class="col-md-4 text-center">
+                <img src="https://www.univalle.edu.co/media/k2/items/cache/f785ce9aa046b8e80b5e1f1403e9e71e_M.jpg" alt="Atención Médica" class="img-fluid rounded-circle shadow-lg">
+            </div>
+
+            <!-- Texto central -->
+            <div class="col-md-8">
+                <h2 class="text-danger fw-bold">¿Por qué registrarte?</h2>
+                <p class="text-muted mt-3">
+                    Registrarte en el servicio médico de la Universidad del Valle te permite:
+                </p>
+                <ul class="text-muted">
+                    <li>Acceso a consultas médicas especializadas.</li>
+                    <li>Seguimiento de tu historial clínico de forma digital.</li>
+                    <li>Prioridad en servicios médicos internos y convenios externos.</li>
+                    <li>Soporte personalizado en temas de salud.</li>
+                </ul>
+                <p class="text-muted">Haz parte de nuestra comunidad y asegura tu bienestar con los mejores profesionales médicos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Registro -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-danger">
+                <div class="card-body">
+                    <h3 class="card-title text-center text-danger">Formulario de Registro</h3>
+                    <form method="POST" class="mt-4">
+                        {% csrf_token %}
+                        <!-- Renderización del formulario -->
+                        <div class="mb-3">
+                            {{ form.as_p }}
+                        </div>
+
+                        <!-- Botón de Registro -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-danger btn-lg shadow-sm animate__animated animate__pulse animate__infinite">Registrarme</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensaje de Error -->
+    {% if error %}
+    <div class="alert alert-danger mt-3 text-center animate__animated animate__shakeX">
+        {{ error }}
+    </div>
+    {% endif %}
+</section>
+
+<!-- Pie de Página -->
+<footer class="bg-light text-center py-4 mt-5">
+    <p class="text-secondary mb-0">© 2024 Universidad del Valle - Todos los derechos reservados.</p>
+</footer>
+
+{% endblock %}

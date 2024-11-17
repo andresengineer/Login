@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - Medicina Univalle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* Cuadro de login */
+        .login-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        .login-card h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        .login-card p {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .login-card button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+        }
+
+        /* Galería interactiva */
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 50px 0;
+        }
+
+        .gallery-image {
+            width: 150px;
+            height: 100px;
+            transition: all 0.3s ease;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.5);
+            z-index: 10;
+        }
+
+        .gallery-image:not(:hover) {
+            transform: translateX(-10px);
+        }
+
+        /* Imagen de la derecha */
+        .right-image {
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Estilos del carrousel */
+        .carousel-item img {
+            object-fit: cover;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+<!-- Cuadro de Login con imágenes a los lados -->
+<div class="container my-5 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <!-- Columna con el formulario de login -->
+        <div class="col-md-6">
+            <div class="login-card text-center">
+                <h2 class="text-danger mb-4">Inicia Sesión</h2>
+                <p>Accede a tu cuenta para gestionar tus citas médicas de manera segura y eficiente.</p>
+
+                <!-- Muestra el error si existe -->
+                {% if error %}
+                    <div class="alert alert-danger">
+                        <p>{{ error }}</p>
+                    </div>
+                {% endif %}
+                
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-danger w-100">Ingresar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Columna con la imagen de la derecha -->
+        <div class="col-md-6">
+            <img src="https://www.elpais.com.co/especiales/educacion-superior/assets/img/u/univalle-main.png" alt="Imagen de Inicio" class="right-image">
+        </div>
+    </div>
+</div>
+
+<!-- Galería Interactiva -->
+<div class="container my-5">
+    <h2 class="text-center text-danger mb-4">Servicio Médico Univalle</h2>
+    <p class="text-center text-muted mb-4">Comprometidos con tú salud, brindamos servicios de calidad a toda nuestra comunidad.</p>
+    <div class="image-gallery">
+        <img src="https://www.univalle.edu.co/media/k2/items/cache/8f0b5dca955f577f94d9c7bb13c4fc33_Generic.jpg" alt="Imagen 1" class="gallery-image">
+        <img src="https://www.univalle.edu.co/media/k2/items/cache/1e76e75572fa4426886b0c30196b7bf1_Generic.jpg" alt="Imagen 2" class="gallery-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnrNWWOxur-DeVj64LU-GMDSJnIsM1urR6aQ&s" alt="Imagen 3" class="gallery-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OZWaLkvZDzNuFTNkYFodK2zMP-8eGML1nQ&s" alt="Imagen 4" class="gallery-image">
+        <img src="https://zaphiro.co/wp-content/uploads/2018/10/min-salud-reportes-300x200.jpg" alt="Imagen 5" class="gallery-image">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+{% endblock %}

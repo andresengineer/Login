@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="card card-body bg-light">
+    <div class="container mt-5">
+        <!-- Encabezado -->
+        <header class="text-center mb-4">
+            <h1 class="display-4 text-danger fw-bold">Citas Médicas - Universidad del Valle</h1>
+            <p class="text-secondary fs-5">Gestiona tus citas médicas de manera rápida y eficiente.</p>
+        </header>
+
+        <!-- Hero Image con animación -->
+        <div class="d-flex justify-content-center mb-5">
+            <img src="https://www.univalle.edu.co/images/logo.jpg" alt="Citas Médicas Univalle" class="img-fluid rounded shadow-lg animate__animated animate__fadeIn">
+        </div>
+
+        <!-- Beneficios de Afiliarse -->
+        <section class="my-5">
+            <div class="row align-items-center">
+                <!-- Imagen izquierda -->
+                <div class="col-md-4 text-center">
+                    <img src="https://www.univalle.edu.co/media/k2/items/cache/bbcbbb9029ead8266ae1bcd1abee9d18_XL.jpg" alt="Beneficio 1" class="img-fluid rounded-circle shadow-lg">
+                </div>
+
+                <!-- Texto central -->
+                <div class="col-md-4 text-center">
+                    <h2 class="text-danger fw-bold">¿Por qué afiliarse al servicio médico Univalle?</h2>
+                    <p class="text-muted mt-3">
+                        Afiliarte al servicio médico de la Universidad del Valle te garantiza acceso a una atención médica integral con profesionales altamente capacitados. 
+                        Además, tendrás acceso a:
+                    </p>
+                    <ul class="text-start text-muted">
+                        <li>Consultas especializadas en diversas áreas médicas.</li>
+                        <li>Historial médico digitalizado para un seguimiento más eficiente.</li>
+                        <li>Soporte y asesoría en temas de salud de manera personalizada.</li>
+                        <li>Convenios con laboratorios y especialistas para servicios adicionales.</li>
+                    </ul>
+                    <p class="text-muted mt-3">Aprovecha estos beneficios y cuida de tu salud con el respaldo de nuestra universidad.</p>
+                </div>
+
+                <!-- Imagen derecha -->
+                <div class="col-md-4 text-center">
+                    <img src="https://safetyworkla.com/fotos_sociales/univalle-saludocupacional-safetyworkla.jpg" alt="Beneficio 2" class="img-fluid rounded-circle shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Botones Centrados -->
+        <div class="text-center mt-4">
+            <a href="/signup" class="btn btn-danger btn-lg mx-3 shadow-sm">Sign Up</a>
+            <a href="/signin" class="btn btn-outline-danger btn-lg mx-3 shadow-sm">Sign In</a>
+        </div>
+
+        <!-- Información destacada -->
+        <div class="row text-center mt-5">
+            <!-- Card 1 -->
+            <div class="col-md-4 mb-3">
+                <div class="card border-danger h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Reservar Citas</h5>
+                        <p class="card-text text-muted">Selecciona tu especialidad y agenda tu cita médica con facilidad.</p>
+                        <a href="#" class="btn btn-outline-danger">Reservar Ahora</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4 mb-3">
+                <div class="card border-danger h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Historial Médico</h5>
+                        <p class="card-text text-muted">Accede a tu historial médico y mantén un control detallado.</p>
+                        <a href="#" class="btn btn-outline-danger">Consultar Historial</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4 mb-3">
+                <div class="card border-danger h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Ayuda y Soporte</h5>
+                        <p class="card-text text-muted">Encuentra respuestas a tus preguntas y solicita ayuda si la necesitas.</p>
+                        <a href="#" class="btn btn-outline-danger">Contactar Soporte</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Animación adicional para la experiencia -->
+<section class="bg-danger text-white text-center py-5 animate__animated animate__bounceIn">
+    <h2 class="fw-bold">Comprometidos con tu bienestar</h2>
+    <p>En la Universidad del Valle, tu salud es nuestra prioridad.</p>
+</section>
+
+
+
+{% endblock %}
